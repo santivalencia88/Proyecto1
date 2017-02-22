@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CarLog.Models.tipo_vehiculo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.detalle_tipovehiculo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.detalle_tipovehiculo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_tipovehiculo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_tipovehiculo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_tipovehiculo })
+        </td>
+    </tr>
+}
+
+</table>

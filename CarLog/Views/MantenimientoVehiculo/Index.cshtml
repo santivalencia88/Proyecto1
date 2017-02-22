@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CarLog.Models.vehiculo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mantenimiento Vehiculos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleado.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marca.detalle_marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_vehiculo.detalle_tipovehiculo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empleado.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.marca.detalle_marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_vehiculo.detalle_tipovehiculo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_vehiculo }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_vehiculo }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_vehiculo })
+        </td>
+    </tr>
+}
+
+</table>

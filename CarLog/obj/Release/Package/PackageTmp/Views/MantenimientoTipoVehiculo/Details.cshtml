@@ -1,0 +1,26 @@
+﻿@model CarLog.Models.tipo_vehiculo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tipo_vehiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.detalle_tipovehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detalle_tipovehiculo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_tipovehiculo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

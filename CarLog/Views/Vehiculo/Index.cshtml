@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CarLog.Models.vehiculo>
+
+@{
+    ViewBag.Title = "Listado-Vehiculos";
+}
+
+<h2>Listado Vehiculos</h2>
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Vehiculo</p>
+        </th>
+        <th>
+            <p>Tipo</p>
+        </th>
+        <th>
+            <p>Marca</p>
+        </th>
+        <th>
+            <p>Empleado</p>
+        </th>
+        <th>
+            <p>Color</p>
+        </th>
+        <th>
+            <p>Placa</p>
+        </th>
+        <th>
+            <p>Fecha Ingreso</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_vehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_tipovehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+}
+
+</table>
